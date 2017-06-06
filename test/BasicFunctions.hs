@@ -23,7 +23,7 @@ koans = describe "BasicFunctions" $ do
 
     -- * Basic Parsing functions
     koanRead
-    --, koanReads
+    koanReads
 
     -- * Functional utilities
     koanId
@@ -46,13 +46,13 @@ koanPlus = koan "(+) function" $ do
 koanMinus :: Koan
 koanMinus = koan "(-) function" $ do
     -- REPLACE: replaceValue with correct value
-    let result = replaceValue "(-)"
+    let result = 15 - 5
     assertEqual "use (-) function" 10 result
 
 koanProd :: Koan
 koanProd = koan "(*) function" $ do
     -- REPLACE: replaceValue with correct value
-    let result = replaceValue "(*)"
+    let result = 3 * 2
     assertEqual "use (*) function" 6 result
 
 ----------------------------------------------------------------------
@@ -64,19 +64,19 @@ koanProd = koan "(*) function" $ do
 koanAnd :: Koan
 koanAnd = koan "(&&) function" $ do
    -- REPLACE: replaceValue with correct value
-   let result = replaceValue "(&&)"
+   let result = True && False
    assertEqual "use (&&) function" False result
 
 koanOr :: Koan
 koanOr = koan "(||) function" $ do
    -- REPLACE: replaceValue with correct value
-   let result = replaceValue "(||)"
+   let result = True || False
    assertEqual "use (||) function" True result
 
 koanNot :: Koan
 koanNot = koan "not function" $ do
    -- REPLACE: replaceValue with correct value
-   let result = replaceValue "not"
+   let result = not True
    assertEqual "use (not) function" False result
 
 ----------------------------------------------------------------------
@@ -88,13 +88,13 @@ koanNot = koan "not function" $ do
 koanRead :: Koan
 koanRead = koan "read function" $ do
     -- REPLACE: replaceValue with correct value
-    let result = replaceValue "read"
+    let result = read "1566"
     assertEqual "use read function" 1566 result
 
 koanReads :: Koan
 koanReads = koan "reads function" $ do
     -- REPLACE: replaceValue with correct value
-    let result = replaceValue "reads"
+    let result = reads "1566 other string" :: [(Integer, String)]
     assertEqual "use reads function" [(1566, " other string")] result
 
 ----------------------------------------------------------------------
@@ -106,6 +106,6 @@ koanReads = koan "reads function" $ do
 koanId :: Koan
 koanId = koan "id function" $ do
     -- REPLACE: replaceValue with correct value
-    let result = replaceValue "id"
+    let result = id 1566
     assertEqual "use id function" 1566 result
 
