@@ -16,20 +16,20 @@ failError msg =
 
 testCurrificationPlus :: Spec
 testCurrificationPlus = it "currification of +" $ do
-  let plus2 = failError "(+ <number>)"
+  let plus2 = (+2)
   assertEqual "" 2 (plus2 0)
   assertEqual "" 3 (plus2 1)
 
 testCurrificationMap :: Spec
 testCurrificationMap = it "currification of map" $ do
-  let addFn = failError "map <some function>"
+  let addFn = map (+1)
   assertEqual "" [1..4] (addFn [0..3])
   assertEqual "" [2..5] $ addFn [1..4]
 
 testCurrificationFilter :: Spec
 testCurrificationFilter = 
     it "currification of filter" $ do
-      let filterFn = failError "filter <some function>"
+      let filterFn = filter even
       assertEqual "" [2, 4, 6, 8, 10] (filterFn [1..10])
       assertEqual "" [12, 14, 16, 18, 20] (filterFn [11..20])
 
