@@ -20,7 +20,8 @@ testReadingChar :: Spec
 testReadingChar = it "getChar" $ do
   putStrLn "Write: \"a\" to pass this test: "
   -- NOTE: replace 'failIO' with the actual function
-  result <- failIO "getChar"
+  result <- getChar
+  putStrLn [result]
   assertEqual ""
               'a'
               result
